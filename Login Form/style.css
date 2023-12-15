@@ -1,8 +1,14 @@
+:root{
+  --line: whitesmoke;
+}
 body{
     margin: 0;
     padding: 0;
     font-family: Montserrat;
-    background: linear-gradient(120deg, #072E33, #0C7075);
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 100vh;
     overflow: hidden;
 }
@@ -12,16 +18,16 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(50%);
+    background-color: rgba(255, 255, 255, 0.250);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 .center h1{
     text-align: center;
-    color: #e9f4fb;
     padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;
+    color: #e9f4fb;
+    border-bottom: 2px solid var(--line);
 }
 .center form{
     padding: 0 40px;
@@ -29,7 +35,7 @@ body{
 }
 form .text_field{
     position: relative;
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid var(--line);
     margin: 30px 0;
 }
 .text_field input{
@@ -45,7 +51,7 @@ form .text_field{
     position: absolute;
     top: 50%;
     left: 5px;
-    color: #adadad;
+    color: var(--line);
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
@@ -72,7 +78,7 @@ form .text_field{
 }
 .pass{
     margin: -5px 0 20px 5px;
-    color: #a6a6a6;
+    color: var(--line);
     cursor: pointer;
 }
 .pass:hover{
@@ -82,29 +88,33 @@ form .text_field{
 input[type="submit"]{
     width: 100%;
     height: 50px;
-    border: 2px solid #0C7075;
-    background: #6DA5C0;
+    border: none;
+    background: #2691d9;
     border-radius: 25px;
     font-size: 18px;
     color: #e9f4fb;
     font-weight: 700;
+    box-shadow: 15px 15px 25px #00000041,inset -15px -15px 25px #ffffff40;
     cursor: pointer;
     outline: none;
 }
 input[type="submit"]:hover{
-    border-color: #6DA5C0;
-    transition: .5s;
+    animation: pulse 0.3s linear 1;
+}
+@keyframes pulse{
+  50%  {transform: scale(0.8);}
 }
 .signup_link{
     margin: 30px 0;
     text-align: center;
-    font-size: 16px;
-    color: #a6a6a6;
+    font-size: 20px;
+    color: var(--line);
 }
 .signup_link a{
-    color: #2691d9;
+    color: var(--line);
     text-decoration: none;
 }
 .signup_link a:hover{
-    text-decoration: underline;
+  color: #2691d9;
+  text-decoration: underline;
 }
